@@ -8,7 +8,7 @@ const CounterOutput = (props) =>{
 
 const mapStateToProps = (state) => {
     return{
-        value: state.counter
+        value: state.counter.counter
     }
 }
 

@@ -1,10 +1,11 @@
 import './App.css';
 import CounterDisplay from "./pages/Counter/CounterDisplay";
-
+import Parent from "./pages/ParentChild/Parent"
 function App() {
   return (
     <div className="App">
       <CounterDisplay/>
+        <Parent/>
     </div>
   );
 }
