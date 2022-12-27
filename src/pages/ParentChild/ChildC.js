@@ -1,7 +1,8 @@
 import React from "react";
-import {connect} from "react-redux";
+import {useSelector} from "react-redux";
 
-function ChildC({fName, lName}){
+function ChildC(){
+    const {firstName: fName, lastName: lName} = useSelector(state => state.name);
     return(
         <>
             This is ChildC Componet.
@@ -13,11 +14,4 @@ function ChildC({fName, lName}){
     )
 }
 
-const mapStateToProps = (state) => {
-    return{
-        fName : state.name.firstName,
-        lName : state.name.lastName
-    }
-}
-
-export default connect(mapStateToProps, null) (ChildC);
+export default ChildC;

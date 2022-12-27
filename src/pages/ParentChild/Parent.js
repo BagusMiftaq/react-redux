@@ -1,16 +1,18 @@
-import React, {useState} from "react";
+import React from "react";
 import ChildA from "./ChildA"
 import {handleFirstName, handleLastName} from "../../store/action/inputNameAction";
-import {connect} from "react-redux";
+import {useDispatch} from "react-redux";
 
-function Parent({setfName, setlName}){
+function Parent(){
     const onSetFirstName = (e) => {
-        setfName(e.target.value)
+        dispatch(handleFirstName(e.target.value))
     }
 
     const onSetLastName = (e) => {
-        setlName(e.target.value)
+        dispatch(handleLastName(e.target.value))
     }
+
+    const dispatch = useDispatch();
 
 
     return(
@@ -30,12 +32,4 @@ function Parent({setfName, setlName}){
         </>
     )
 }
-
-const mapDispatchToProps = (dispatch)=>{
-    return{
-        setfName:(value)=> dispatch(handleFirstName(value)),
-        setlName:(value)=> dispatch(handleLastName(value))
-    }
-}
-
-export default connect(null, mapDispatchToProps) (Parent);
+export default Parent;
