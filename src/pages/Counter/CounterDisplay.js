@@ -2,6 +2,7 @@ import React from "react";
 import CounterOutput from "./components/CounterOutput";
 import CounterControl from "./components/CounterControl";
 import {connect} from "react-redux";
+import {onDecrement, onIncrement} from "../../store/action/counterAction";
 
 const CounterDisplay= (props) => {
     return(
@@ -15,8 +16,8 @@ const CounterDisplay= (props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        onIncrement: () => dispatch({type:"increment", value: 1}),
-        onDecrement: () => dispatch({type:"decrement", value: 1})
+        onIncrement: () => dispatch(onIncrement()),
+        onDecrement: () => dispatch(onDecrement())
 
     }
 }

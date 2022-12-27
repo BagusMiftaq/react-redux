@@ -1,5 +1,5 @@
 import './App.css';
-import CounterDisplay from "./pages/CounterDisplay";
+import CounterDisplay from "./pages/Counter/CounterDisplay";
 
 function App() {
   return (
